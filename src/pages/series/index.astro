@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@layouts/Default.astro';
+import SeriesList from '@components/series/SeriesList.astro';
+
+const posts = await getCollection('series').then((collection) =>
+  collection.reverse()
+);
+---
+
+<Layout
+  title='Series'
+  description='Brosflix Series | Aqui podras encontrar todas las series de nuestro sitio web'
+  pageTitle='Brosflix  Series'
+>
+  <main class='bg-green p-6'>
+    <SeriesList posts={posts} />
+  </main>
+</Layout>

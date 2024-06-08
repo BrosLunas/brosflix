@@ -6,6 +6,7 @@ interface Props {
 const navigationItems = [
   { name: 'Home', url: '/' },
   { name: 'Blog', url: '/blog/' },
+  { name: 'Series', url: '/series/' },
 ];
 
 const socialIcons = [
@@ -19,7 +20,6 @@ const socialIcons = [
     url: 'https://www.twitter.com/Broslunas',
     icon: 'i-uil-twitter',
   },
-  { name: 'RSS', url: '/feed.xml', icon: 'i-uil-rss' },
 ];
 
 const { pageTitle } = Astro.props;
@@ -27,11 +27,11 @@ const { pageTitle } = Astro.props;
 
 <header class='border-b-4 border-black flex justify-between p-6 items-center'>
   {pageTitle && <h1 class='hidden'>{pageTitle}</h1>}
-  <a href='/' title='Back to Home'>
-    <p class='righteous md:text-5xl'>Brutal</p>
+  <a href='/' title='Volver al inicio'>
+    <p class='righteous md:text-5xl'>Brosflix</p>
   </a>
   <nav class='hidden md:inline-block'>
-    <h2 class='hidden'>Navigation</h2>
+    <h2 class='hidden'>Menu</h2>
     <ul class='flex gap-8 poppins'>
       {
         navigationItems.map((item) => (
@@ -39,7 +39,7 @@ const { pageTitle } = Astro.props;
             <a
               class='text-lg font-medium hover:text-green hover:underline transition-all duration-150 ease-in-out'
               href={item.url}
-              title={`Go to ${item.name}`}
+              title={`Ir a ${item.name}`}
             >
               {item.name}
             </a>
@@ -53,7 +53,7 @@ const { pageTitle } = Astro.props;
               href={item.url}
               class='hover:text-green hover:underline transition-all duration-150 ease-in-out'
               target='_blank'
-              title={`'See @ElianCodes on ${item.name}`}
+              title={`${item.name}`}
             >
               <div class:list={[item.icon, 'w-6 h-6']} />
             </a>
@@ -63,9 +63,10 @@ const { pageTitle } = Astro.props;
     </ul>
   </nav>
   <nav class='md:hidden flex'>
-    <h2 class='hidden'>Mobile Navigation</h2>
+    <h2 class='hidden'>Menu</h2>
     <ul>
       <li><a href='/blog/'>Blog</a></li>
+      <li><a href='/series/'>Series</a></li>¡
     </ul>
   </nav>
 </header>

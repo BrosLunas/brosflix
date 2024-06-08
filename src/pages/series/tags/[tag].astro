@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import Layout from '@layouts/Default.astro';
+import SeriesList from '@components/series/SeriesList.astro';
+import { Button } from '@eliancodes/brutal-ui';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('series').then((collection) =>
+    collection.reverse()
+  );
+
+  const tags: string[] = [];
+
+  allPosts.forEach((post) => {
+    post.data.tags.forEach((tag) => {
+      tags.push(tag.toLowerCase());
+    });
+  });
+
+  return Array.from(new Set(tags)).map((tag) => {
+    return {
+      params: { tag },
+      props: {
+        tag,
+        seriesposts: allPosts.filter((post) =>
+          post.data.tags.map((tag) => tag.toLowerCase()).includes(tag)
+        ),
+      },
+    };
+  });
+}
+
+interface Props {
+  tag: string;
+  seriesposts: CollectionEntry<'series'>[];
+}
+
+const { tag, seriesposts } = Astro.props;
+---
+
+<Layout
+  title={`Series: ${tag}`}
+  description={`Brosflix Series | Series con la etiqueta ${tag}`}
+  pageTitle={`Brosflix Series | Series de ${tag}`}
+>
+  <main class='p-6 bg-purple grid gap-4'>
+    <div>
+      <Button href='/series/'>&larr; Volver a Series</Button>
+    </div>
+    <SeriesList posts={seriesposts} />
+  </main>
+</Layout>
