@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --width-scroll: 8px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: whitesmoke;
+  background: black;
+  scrollbar-gutter: stable;
+}
+
+@media (max-width: 768px) and (min-height: 900px) {
+  /* Espacio del scroll */
+  .scrollMove {
+    width: calc(100vw - (8px));
+  }
+}
+
+body.disable-scroll {
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: var(--width-scroll);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4c4c4c;
+  border-radius: 3px;
+}
+
+.carrusel {
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
+}
+
+.carrusel::-webkit-scrollbar {
+  display: none;
+}
