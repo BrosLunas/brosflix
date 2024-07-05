@@ -52,11 +52,11 @@ export default function NavSearch({
             <div className='hidden items-center gap-4 lg:gap-6 md:flex'>
                 <div className='flex gap-4 lg:gap-6'>
                     <Link
-                        href='/'
+                        href='https://broslunas.vercel.app'
                         className={`hover:text-white transition-colors 
                     ${type === '' ? 'text-white' : 'text-txtGray1'}`}
                     >
-                        Home
+                        Inicio
                     </Link>
                     <Link
                         href='/search/movie'
