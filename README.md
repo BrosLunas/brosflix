@@ -25,4 +25,4 @@
    npm install
    npm run dev
    
-Siéntete libre de explorar **Flix** en [flix.app](https://flix-zeta.vercel.app/). Para cualquier pregunta o problema, puedes comunicarte en [LinkedIn](https://www.linkedin.com/in/erick-josep-salazar-8b8b6024b/) o visitar el [sitio web](https://flix-zeta.vercel.app/). ¡Disfruta de explorar películas! 🎬🍿
+Siéntete libre de explorar **Flix** en [Brosflix](https://brosflix.vercel.app/). Para cualquier pregunta o problema,visitar el [sitio web](https://brosflix.vercel.app/). ¡Disfruta de explorar películas! 🎬🍿

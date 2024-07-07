@@ -57,7 +57,7 @@ export default async function SearchPage({
                 <header className='text-center py-10 text-txtGray1'>
                     <h3 className='uppercase text-lg'>
                         Todas las {nameType} disponibles actualmente en
-                        aluraflix
+                        Brosflix
                     </h3>
                 </header>
                 <ImagesGridLayout component='section'>
